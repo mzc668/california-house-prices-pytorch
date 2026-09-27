@@ -83,7 +83,6 @@ def main():
     X_all = preprocess.fit_transform(X)
     test_features = preprocess.transform(X_test)
     net = train_model(X_all, y)
-    print(y)
 
     # 5. 预测测试集：将模型输出的 log(房价) 用 exp 还原成实际房价。
     prices = np.exp(predict_log(net, test_features))
